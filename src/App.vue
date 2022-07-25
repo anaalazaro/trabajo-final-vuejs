@@ -1,8 +1,21 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <nav class="navbar-expand-lg navbar-dark bg-dark justify-content-center">
+      <div class="container-fluid">
+        <router-link class="navbar-brand" to="/">Home</router-link> |
+        <router-link
+          class="navbar-brand"
+          :to="{
+            name: 'posts',
+            params: {
+              id: this.$route.params.id,
+            },
+          }"
+          >Post</router-link
+        >
+        |
+        <router-link class="navbar-brand" to="/usuarios">Usuarios</router-link>
+      </div>
     </nav>
     <router-view />
   </div>
