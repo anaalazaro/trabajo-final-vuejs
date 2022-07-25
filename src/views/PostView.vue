@@ -42,7 +42,9 @@ export default {
     };
   },
   created() {
-    this.obtenerPosts(this.$route.params.id);
+    if (this.$route.params.id) {
+      this.obtenerPosts(this.$route.params.id);
+    }
   },
 
   computed: {
